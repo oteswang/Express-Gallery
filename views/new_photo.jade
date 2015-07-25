@@ -1,0 +1,42 @@
+extends _layout
+
+block content
+  if name
+    //- h1 You are here, #{name}
+    h3 You will be redirected back to the home page in #[span(id="countdown")] seconds.
+  else
+    div.testbox
+      form(name="new_photo", method="post" action="/new_photo")
+        div.accounttype
+          p Enter details for the new photo
+          label(id="icon" for="username")
+            i(class="icon-user")
+          input(
+            type="text"
+            name="author"
+            id="author"
+            placeholder="Name of the author"
+            required)
+          label(id="icon" for="link")
+            i(class="icon-link")
+          input(
+            type="text"
+            name="link"
+            id="link"
+            placeholder="Photo URL"
+            required)
+          label(id="icon" for="description")
+            i(class="icon-pencil")
+          input(
+            type="text"
+            name="description"
+            id="description"
+            placeholder="Description of photo"
+            required)
+        div.submit
+          a(href="#" class="button")
+            input(
+              type="submit"
+              id="submit"
+              class="button"
+              name="submit")

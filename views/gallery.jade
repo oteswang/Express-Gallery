@@ -1,0 +1,12 @@
+//- extends _layout
+
+block content
+  h2 #{single_photo.author}
+  img(src='#{single_photo.link}')
+  h3 #{single_photo.description}
+
+block sidebar
+  ul
+    each val in table
+      img(src=val.link)
+      h2 #{val.author} - #{val.link}
