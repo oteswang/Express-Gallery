@@ -12,7 +12,7 @@ models.sequelize
       photoData.push({
         author: faker.name.firstName(),
         link: faker.image.image(),
-        description: faker.name.jobDescriptor()
+        description: faker.lorem.sentences()
       });
     }
 

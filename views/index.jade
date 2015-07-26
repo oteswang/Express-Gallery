@@ -2,13 +2,13 @@ extends _layout
 
 block content
   div.row
-    div.small-8.columns
-      h2 #{table.author}
+    div.large-12.columns
+      a(href="/gallery/#{top_image.id}")
+        img(src='#{top_image.link}')
+  br
   div.row
-    div.small-8.columns
-      img(src='#{table.link}')
-      h3 #{table.description}
-    div.small-4.columns
-      each val in table
-        img(src=val.link)
-        h2 #{val.author} - #{val.link.hostname}
+    each photo in photos
+      div.medium-4.columns
+        br
+        a(href="/gallery/#{photo.id}")
+          img(src='#{photo.link}')

@@ -7,9 +7,9 @@ block content
   div.row
     div.small-8.columns
       img(src='#{single_photo.link}')
-      h3 #{single_photo.description}
+      h4 #{single_photo.description}
     div.small-4.columns
-      each val in table
-        unless (single_photo.id === val.id)
-          img(src=val.link)
-          h2 #{val.author} - #{val.link}
+      each row in table
+        if (single_photo.id !== row.id)
+          img(src=row.link)
+          h6 #{row.author} - #{row.link}

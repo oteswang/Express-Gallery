@@ -12,10 +12,19 @@ router.use(function timelog (req, res, next) {
 
 router.route('/')
   .get(function (req, res) {
-    Photo.findAll({})
-    .then(function (table) {
+    return Photo.findAll({
+      order: "id ASC",
+      limit: 6
+    })
+    .then(function (photos) {
+      res.locals.photos = photos;
+      return Photo.findOne({
+        order: "id DESC"
+      });
+    })
+    .then(function (top_image) {
       return res.render('index', {
-        table: table
+        top_image: top_image
       });
     });
   })
@@ -52,15 +61,14 @@ router.route('/new_photo')
 
 router.route('/gallery/:id')
   .get(function (req, res) {
-    Photo.findAll({
-      where: {
-        "id": {
-          lte: 4
-        }
-      }
+    return Photo.findAll({
+      order: [
+        [models.Sequelize.fn('RANDOM')]
+      ],
+      limit: 3
     })
     .then(function (table) {
-      Photo.findById(req.params.id)
+      return Photo.findById(req.params.id)
       .then(function (photo) {
         if (!photo) {
           return res.redirect('/');
