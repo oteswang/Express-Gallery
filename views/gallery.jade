@@ -1,12 +1,15 @@
-//- extends _layout
+extends _layout
 
 block content
-  h2 #{single_photo.author}
-  img(src='#{single_photo.link}')
-  h3 #{single_photo.description}
-
-block sidebar
-  ul
-    each val in table
-      img(src=val.link)
-      h2 #{val.author} - #{val.link}
+  div.row
+    div.small-8.columns
+      h2 #{single_photo.author}
+  div.row
+    div.small-8.columns
+      img(src='#{single_photo.link}')
+      h3 #{single_photo.description}
+    div.small-4.columns
+      each val in table
+        unless (single_photo.id === val.id)
+          img(src=val.link)
+          h2 #{val.author} - #{val.link.hostname}

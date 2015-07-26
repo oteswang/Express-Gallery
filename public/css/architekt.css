@@ -79,7 +79,7 @@ body { font-family: arial, verdana, georgia; font-size: 12px; background-color: 
 #outside_container { margin: 0 auto; background-color: #fff; border-top: 7px solid #FFFFFF; width: 1039px; }
 #main_container { width: 959px; margin: 0 auto; }
 h1,h2,h3,h4,h5,p { margin: 10px 0; }
-h1 { font-size: 50px; }
+h1 { font-size: 15px; }
 a { color: #A1A1A1; text-decoration: none; }
 a:hover { text-decoration:underline; }
 .clear { clear: both; }
