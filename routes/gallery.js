@@ -12,7 +12,15 @@ router.use(function timelog (req, res, next) {
 
 router.route('/')
   .get(function (req, res) {
-    res.render('index');
+    Photo.findAll({})
+    .then(function (table) {
+      return res.render('index', {
+        table: table
+      });
+    });
+  })
+  .post(function (req, res) {
+    res.redirect('/');
   });
 
 router.route('/new_photo')
@@ -29,19 +37,30 @@ router.route('/new_photo')
     res.redirect('/');
   });
 
-router.route('/gallery')
-  .get(function (req, res) {
-    res.render('index', { gallery: req.params.id });
-  });
+// router.route('/gallery')
+//   .get(function (req, res) {
+//     Photo.findAll({})
+//     .then(function (table) {
+//       return res.render('gallery', {
+//         table: table
+//       });
+//     });
+//   })
+//   .post(function (req, res) {
+//     res.redirect('/');
+//   });
 
 router.route('/gallery/:id')
   .get(function (req, res) {
-    Photo.findAll({})
+    Photo.findAll({
+      where: {
+        "id": {
+          lte: 4
+        }
+      }
+    })
     .then(function (table) {
-
-      Photo.findOne({
-        where: { "id": req.params.id }
-      })
+      Photo.findById(req.params.id)
       .then(function (photo) {
         if (!photo) {
           return res.redirect('/');

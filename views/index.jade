@@ -2,16 +2,13 @@ extends _layout
 
 block content
   div.row
-  div.large-6.columns
-    h1 _ARCHITEKT
-  div.large-6.columns
-    div.header_text_cont
-      p Welcome to our online portfolio, we are a small group
-          | of passionate designers and architects, looking to
-          | change and create amazing digital images to inspire
-          | others to follow in our innovative steps. Free Architect
-          | WordPress Theme
-  div.large-12.columns
-    div.slider_container
-      div.slideshow
-        img(src="/images/slideshow-food-3.png")
+    div.small-8.columns
+      h2 #{table.author}
+  div.row
+    div.small-8.columns
+      img(src='#{table.link}')
+      h3 #{table.description}
+    div.small-4.columns
+      each val in table
+        img(src=val.link)
+        h2 #{val.author} - #{val.link.hostname}
