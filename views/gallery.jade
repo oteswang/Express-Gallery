@@ -3,13 +3,15 @@ extends _layout
 block content
   div.row
     div.small-8.columns
-      h2 #{single_photo.author}
+      h5.gallery #{single_photo.author} - #{single_photo.link}
   div.row
     div.small-8.columns
-      img(src='#{single_photo.link}')
-      h4 #{single_photo.description}
+        a(href='/gallery/#{single_photo.id}')
+          img.gallery(src='#{single_photo.link}')
+          h5.gallery_desc #{single_photo.description}
     div.small-4.columns
       each row in table
         if (single_photo.id !== row.id)
-          img(src=row.link)
-          h6 #{row.author} - #{row.link}
+          a(href='/gallery/#{row.id}')
+            img(src=row.link)
+            h6.gallery #{row.author} - #{row.link}

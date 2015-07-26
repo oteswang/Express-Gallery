@@ -40,7 +40,7 @@ h1 {
 h2 {
   font-size: 22px;
   font-weight: 300;
-  color: #00CC00;
+  color: #00cc00;
   text-align: center;
   padding-top: 10px;
   margin-bottom: 10px;
@@ -53,6 +53,47 @@ h3 {
   text-align: center;
   padding-top: 10px;
   margin-bottom: 10px;
+}
+
+h6.index {
+  font-size: 10px;
+  font-weight: 300;
+  color: #4c4c4c;
+  text-align: left;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+h5.gallery {
+  font-size: 14px;
+  font-weight: bold;
+  color: #c7c7c7;
+  text-align: left;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+h5.gallery_desc {
+  font-size: 14px;
+  font-weight: bold;
+  color: #0000;
+  text-align: left;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+h6.gallery {
+  font-size: 12px;
+  font-weight: 300;
+  background-color: #ffffff;
+  color: #c7c7c7;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+img.gallery {
+  height: 494px;
 }
 
 span {
@@ -226,29 +267,141 @@ div.boxed {
   border: solid 0px #cbc9c9;
 }
 
-/** Header **/
-#header { }
-.header_top_text { padding: 5px 0; text-align: center; font-size: 20px; border-bottom: 1px dotted #ccc; color: #999; }
-.header_text_cont { float: right; padding: 0 25px 0 15px; margin: 10px 0; border-left: 1px solid #ddd; width: 275px; }
+img.top-image {
+  width: 100%;
+  height: 375px;
+}
 
-#slider_container { padding: 10px 0; border-bottom: 1px solid #E5E5E5; position: relative; }
-#slider_container img.slide_prev { position: absolute; top: 200px; left: 15px; z-index: 999; width: 19px !important; height: 24px !important; display: block; }
-#slider_container img.slide_next { position: absolute; top: 200px; left: 697px; z-index: 999; width: 19px !important; height: 24px !important; display: block; }
+div.space {
+  white-space: pre;
+}
 
-#slideshow {
-    position:relative;
-    height:349px;
-    width: 959px;
+div.header_logo{
+  padding-top: 15px;
 }
-#slideshow img { width: 959px; height: 349px; }
-#slideshow a {
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:8;
+
+div.header_text_cont p {
+  text-align: left;
+  font-size: 12px;
+  padding: 0 25px 0 15px;
+  margin: 10px 0;
+  float: left;
+  border-left: 1px dotted #ccc;
+  color: #999;
+  width: 275px;
 }
-#slideshow a.active {
-    z-index:10;
+
+/*div.gallery {
+  width: 100%;
+  height: 375px;
+}*/
+
+/* Navigation */
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-#slideshow a.last-active {
-    z-index:9;
+#cssmenu {
+  border-bottom: 3px solid #333333;
+  padding: 0 5px;
+  width: auto;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #dddddd;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+#cssmenu:after,
+#cssmenu ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#cssmenu ul li {
+  display: inline-block;
+}
+#cssmenu.align-right ul li {
+  float: right;
+}
+#cssmenu.align-center ul {
+  text-align: center;
+}
+#cssmenu ul li a {
+  font-size: 14px;
+  padding: 15px;
+  text-decoration: none;
+  color: #0e83cd;
+}
+#cssmenu ul li:hover a,
+#cssmenu ul li a:hover,
+#cssmenu ul li.active a {
+  color: #333333;
+}
+@media all and (max-width: 640px) {
+  #cssmenu {
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+  }
+  #cssmenu ul li,
+  #cssmenu.align-center,
+  #cssmenu.align-right {
+    display: block;
+  }
+}
+
+div.footer_box {
+  height: 198px;
+  border-right: 1px solid #DDDDDD;
+  padding-right: 20px;
+  margin-right: 20px;
+  /*float: left;*/
+}
+
+div.footer_box_cont {
+  border-right: 0;
+}
+
+div.footer_box_li li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  color: #6c6c6c;
+  font-size: 12px;
+}
+
+div.footer_box_h3 h3 {
+  text-align: -webkit-match-parent;
+  color: #010101;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+div.footer_box_border_top {
+  padding: 20px 0;
+  margin-top: 25px;
+  border-top: 1px solid #e5e5e5;
+  display: block;
+}
+
+div.footer_copyright h6 {
+  background-color: #ffffff;
+  padding: 5px 40px 0 0;
+  color: #838383;
+  font-size: 11px;
+  text-align: right;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}

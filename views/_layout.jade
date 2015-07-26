@@ -2,28 +2,108 @@
 html(lang="en")
 head
   meta(charset="UTF-8")
-  title _ARCHITEKT
+  title _ARCHITEKT Theme
 
-  link(rel="stylesheet" href="css/styles.css")
+  link(rel='stylesheet' href='/css/styles.css')
   link(rel='stylesheet' href='/css/foundation.css')
 
   script(src='/js/vendor/modernizr.js')
 body
   div.row
     div.large-8.columns
-      h1 _ARCHITEKT
+      div.header_logo
+        a(href='/')
+          img(src='/images/logo.jpg')
     div.large-4.columns
-      p Welcome to our online portfolio, we are a small group
+      div.header_text_cont
+        p Welcome to our online portfolio, we are a small group
           | of passionate designers and architects, looking to
           | change and create amazing digital images to inspire
           | others to follow in our innovative steps. Free Architect
           | WordPress Theme
+  div.row
+    div.large-12.columns
+      #cssmenu
+        ul
+          li.active
+            a(href="/")
+              li Home
+          li
+            a(href="#")
+              li New Photo
+          li
+            a(href="#")
+              li Edit Photo
+          li
+            a(href="#")
+              li About
+          li.last
+            a(href="#")
+              li Contact
 
   block content
+    div.row
+      div.medium-4.columns
+        li Home
+      div.medium-4.columns
+        li About
 
   block footbar
+    div.footer_box_border_top
+      div.row
+        div.small-3.columns
+          div.footer_box
+            div.footer_box_h3
+              h3 SOCIAL LINKS
+              div.footer_box_li
+                a(href="#")
+                  li Facebook
+                a(href="#")
+                  li Twitter
+                a(href="#")
+                  li Tumblr
+                a(href="#")
+                  li Dribble
+                a(href="#")
+                  li Forrst
+        div.small-3.columns
+          div.footer_box
+            div.footer_box_h3
+              h3 NAVIGATION
+              div.footer_box_li
+                a(href="/")
+                  li Home
+                a(href="#")
+                  li New Photo
+                a(href="#")
+                  li Edit Photo
+                a(href="#")
+                  li About
+                a(href="#")
+                  li Contact
+        div.small-3.columns
+          div.footer_box
+            div.footer_box_h3
+              h3 ABOUT ARCHITEKT
+              div.footer_box_li
+                li Welcome to our online portfolio, we are a small group
+                    | of passionate designers and architects, looking to
+                    | change and create amazing digital images to inspire
+                    | others to follow in our innovative steps. Free Architect
+                    | WordPress Theme
+        div.small-3.columns
+          div.footer_box_cont
+            div.footer_box_h3
+              h3 CONTACT
+              div.footer_box_li
+                li Kelemete Seto
+                li Tel: 1-699-NEV-MIND
+                li oteswang@gmail.com
+        div.small-12.columns
+          div.footer_copyright
+            h6 Copyright 2015. All Rights Reserved. Design & Developed by Shackcloud.com
 
-  script(src="js/vendor/jquery.js")
-  script(src="js/foundation.min.js")
+  script(src='js/vendor/jquery.js')
+  script(src='js/foundation.min.js')
   script.
     $(document).foundation();

@@ -6,7 +6,7 @@ models.sequelize
   .then(function () {
 
     var photoData = [];
-    var TOTAL_PHOTOS = faker.random.number({ min: 1, max: 100 });
+    var TOTAL_PHOTOS = faker.random.number({ min: 1, max: 10 });
 
     for (var i = 0; i < TOTAL_PHOTOS; i++) {
       photoData.push({
