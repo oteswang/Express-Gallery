@@ -50,6 +50,34 @@ router.route('/new_photo')
     res.redirect('/');
   });
 
+router.route('/edit_photo')
+  .get(function (req, res) {
+    res.render('edit_photo');
+  })
+  .post(function (req, res) {
+
+    Photo.create({
+      author: req.body.author,
+      link: req.body.link,
+      description: req.body.description
+    });
+    res.redirect('/');
+  });
+
+router.route('/about')
+  .get(function (req, res) {
+    res.render('about');
+  })
+  .post(function (req, res) {
+
+    Photo.create({
+      author: req.body.author,
+      link: req.body.link,
+      description: req.body.description
+    });
+    res.redirect('/');
+  });
+
 router.route('/gallery/:id')
   .get(function (req, res) {
     return Photo.findAll({

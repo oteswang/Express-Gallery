@@ -1,0 +1,12 @@
+extends _layout
+
+block content
+  h1 Hello, #{user.username}!
+  div.logout
+    a(href="/logout" class="button")
+      input(
+        type="submit"
+        id="submit"
+        class="button"
+        name="logout"
+        value="Logout")

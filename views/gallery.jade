@@ -6,9 +6,9 @@ block content
       h5.gallery #{single_photo.author} - #{single_photo.link}
   div.row
     div.small-8.columns
-        a(href='/gallery/#{single_photo.id}')
-          img.gallery(src='#{single_photo.link}')
-          h5.gallery_desc #{single_photo.description}
+        //- a(href='/gallery/#{single_photo.id}')
+        img.gallery(src='#{single_photo.link}')
+        h5.gallery_desc #{single_photo.description}
     div.small-4.columns
       each row in table
         if (single_photo.id !== row.id)

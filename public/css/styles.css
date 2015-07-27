@@ -363,9 +363,22 @@ div.header_text_cont p {
   }
 }
 
+div.clear {
+  display: block;
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 10px;
+  margin-top: -30px;
+}
+
+div.clear_footer {
+  padding-top: 10px;
+  margin-top: -30px;
+}
+
 div.footer_box {
   height: 198px;
-  border-right: 1px solid #DDDDDD;
+  border-right: 1px solid #dddddd;
   padding-right: 20px;
   margin-right: 20px;
   /*float: left;*/

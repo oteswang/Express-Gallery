@@ -3,12 +3,13 @@ extends _layout
 block content
   div.space
     div.row
-      div.large-12.columns
+      div.medium-12.columns
         a(href="/gallery/#{top_image.id}")
           img.top-image(src='#{top_image.link}')
     div.row
-      each photo in photos
-        div.medium-4.columns
-          a(href="/gallery/#{photo.id}")
-            img(src='#{photo.link}')
-            h6.index #{photo.author} - #{photo.link}
+      div.clear
+        each photo in photos
+          div.medium-4.columns
+            a(href="/gallery/#{photo.id}")
+              img(src='#{photo.link}')
+              h6.index #{photo.author} - #{photo.link}

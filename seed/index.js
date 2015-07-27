@@ -1,8 +1,10 @@
 var models = require('../models');
+var User = models.user;
 var faker = require('faker');
 
 models.sequelize
   .sync({ force: true })
+  .then(require('./bob'))
   .then(function () {
 
     var photoData = [];

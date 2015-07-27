@@ -1,5 +1,30 @@
+extends _layout
+
 block content
-  h2 #{author}
-  img(src='#{link}')
-  h3 #{description}
-  input(type="button")
+  div.testbox
+    form(method="post" action="/login")
+      div.accounttype
+        p Enter Username and Password
+        label(id="icon" for="username")
+          i(class="icon-user")
+        input(
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter Username"
+          required)
+        label(id="icon" for="password")
+          i(class="icon-shield")
+        input(
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter Password"
+          required)
+      div.submit
+        a(href="#" class="button")
+          input(
+            type="submit"
+            id="submit"
+            class="button"
+            name="submit")
